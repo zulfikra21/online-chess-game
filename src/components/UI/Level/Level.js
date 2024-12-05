@@ -19,6 +19,7 @@ export const Level = () => {
 						<div className="u-table-wrap">
 							<div className="u-row">
 								<div className="u-item-container">
+									{/* HERE IS AI Monkey button */}
 									<button className="u-item" onClick={() => machinePlayAction(0)}>AI MonKey</button>
 								</div>
 								<div className="u-item-container">

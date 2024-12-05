@@ -42,10 +42,10 @@ import {chainId, llgContractAddress, llgRewardContractAddress} from '../../utils
 
 import {getContractWithSigner, getContractWithoutSigner} from '../../utils/interact';
 import { Contract, ethers } from 'ethers'
-
+// import  { Web3 } from "web3"
 const llgContractABI = require("../../utils/llg-contract-abi.json");
 const llgRewardContractABI = require("../../utils/llg-reward-contract-abi.json");
-
+// const { Web3 } = require("web3");
 
 export default class Scene extends Component {
     componentDidMount() {
@@ -1898,10 +1898,23 @@ export default class Scene extends Component {
 
     /***************************************************************************************************************************/
 
+    // here is the code to connect wallet
+    async connect() {
+        if(window.ethereum) {
+            const accounts = await window.ethereum.request({ method:"eth_requestAccounts" });
+            console.log(accounts[0])
+            alert(`Your account is ${accounts[0]}`)
+        }
+    }
     render() {
         return (
+
           <div className="GameScene">
+            <button type="button" style={{ zIndex:9999, top:0,  position:"absolute" }} className="mb-4 fixed" onClick={ () => this.connect() }>Connect to wallet</button>
+
             <div className="game-container">
+                {/* Here is the button */}
+
                 <div className="game-canvas" ref={(ref) => (this.container = ref)}></div>
                 <GameStateHeader
                     opponentName={this.state && this.state.opponentName}

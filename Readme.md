@@ -28,3 +28,6 @@ We will review not only your code optimization but also your coding style and co
 2. Find the AI ​​monkey part in your React component.
 3. Create a simple button and connect your cryptocurrency wallet to the AI ​​Monkey page.
 ```
+
+2 => Ai Monkey part is in directory src/components/ui/level/Level.js
+3. => I have been added the button in gameScene view
